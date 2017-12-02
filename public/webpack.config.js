@@ -1,10 +1,10 @@
 const webpack = require('webpack')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 const config = {
-    entry: __dirname + '/js/index.jsx',
+    entry: ['./js/index.jsx', './css/style.scss'],
     output: {
-        path: __dirname + '/dist',
-        filename: 'bundle.js'
+        filename: 'dist/bundle.js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.css']
@@ -15,9 +15,28 @@ const config = {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader']
+                })
+            },
+            {
+                test: /\.(sass|scss)$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin({
+            filename: 'dist/[name].bundle.css',
+            allChunks: true
+        })
+    ]
 };
 
 module.exports = config;
