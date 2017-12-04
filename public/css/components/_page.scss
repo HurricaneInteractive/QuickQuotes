@@ -1,0 +1,44 @@
+#qq {
+    @include clearfix();
+    max-width: 1240px;
+    padding: 70px 20px 0;
+    margin: 0 auto;
+    #navigation,
+    #app {
+        float: left;
+        width: 100%;
+    }
+    #navigation {
+        max-width: 230px;
+    }
+    #app {
+        max-width: 970px;
+        .content-container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.page-title {
+    width: 100%;
+    position: relative;
+    h1 {
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0 30px;
+        background: white;
+        position: relative;
+        z-index: 2;
+    }
+    .deco-line {
+        width: 600px;
+        position: absolute;
+        height: 3px;
+        border: 1px solid $black;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%);
+    }
+}

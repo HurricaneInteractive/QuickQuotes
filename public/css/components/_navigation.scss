@@ -1,0 +1,45 @@
+#navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin-bottom: 21px;
+        a {
+            display: inline-block;
+            line-height: 20px;
+            padding: 5px 8px 5px;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: calc(100% - 2px);
+                border: 1px solid $black;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: top $anim-duration ease-in-out, left $anim-duration ease-in-out, width $anim-duration ease-in-out;
+            }
+            &.active {
+                background-color: $black;
+                color: white;
+                &:before {
+                    width: calc(100% - 2px);
+                    top: 3px;
+                    left: 3px;
+                }
+            }
+            &:hover {
+                &:before {
+                    width: calc(100% - 2px);
+                }
+            }
+            &.active:hover {
+                &:before {
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

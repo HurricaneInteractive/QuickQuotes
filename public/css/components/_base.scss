@@ -1,0 +1,30 @@
+html {
+    background-color: $black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    font-size: $base-font-size;
+    color: $black;
+    font-weight: $weight-normal;
+    min-height: calc(100vh - 30px);
+    width: calc(100% - 30px);
+    margin: 15px;
+    background-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: calc-em(24px, $base-font-size);
+    font-weight: $weight-normal;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
