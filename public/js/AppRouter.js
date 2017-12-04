@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
     BrowserRouter as Router,
     Link,
@@ -13,16 +13,26 @@ import { Navigation } from './globals/Navigation'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
-export const AppRouter = () => {
-    return (
-        <Router>
-            <div>
-                <Navigation />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route component={NotFound} />
-                </Switch>
-            </div>  
-        </Router>
-    )
+export default class AppRouter extends React.Component {
+    render() {
+        // const Fragment = React.Fragment;
+
+        return (
+            <Router>
+                <Fragment>
+                    <Navigation auth="false" />
+                    <div id="app">
+                        <div className="content-container">
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route path="/login" component={Home} />
+                                <Route path="/register" component={Home} />
+                                <Route component={NotFound} />
+                            </Switch>
+                        </div>
+                    </div>
+                </Fragment>
+            </Router>
+        )
+    }
 }
