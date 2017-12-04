@@ -25,7 +25,7 @@ const config = {
                 })
             },
             {
-                test: /\.(sass|scss)$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
                 use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
