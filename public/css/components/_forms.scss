@@ -1,0 +1,24 @@
+.form-control {
+    position: relative;
+    margin-bottom: 20px;
+    label {
+        position: absolute;
+        top: 23px;
+        left: 15px;
+        pointer-events: none;
+        transition: top $anim-duration ease-in-out, font-size $anim-duration ease-in-out, color $anim-duration ease-in-out;
+    }
+    &.col-50 {
+        label {
+            left: 30px;
+        }
+    }
+    input.not-empty,
+    input:focus {
+        & + label {
+            top: 12px;
+            font-size: em(12px);
+            color: rgba($grey, 0.4);
+        }
+    }
+}
