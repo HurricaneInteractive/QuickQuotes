@@ -12,6 +12,7 @@ import { Navigation } from './globals/Navigation'
 // Pages
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
+import Login from './pages/Login'
 
 export default class AppRouter extends React.Component {
     render() {
@@ -25,7 +26,7 @@ export default class AppRouter extends React.Component {
                         <div className="content-container">
                             <Switch>
                                 <Route exact path="/" component={Home} />
-                                <Route path="/login" component={Home} />
+                                <Route path="/login" component={Login} />
                                 <Route path="/register" component={Home} />
                                 <Route component={NotFound} />
                             </Switch>
