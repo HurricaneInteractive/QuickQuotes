@@ -57,3 +57,38 @@ label {
     color: $grey;
     font-weight: $weight-bold;
 }
+
+.btn,
+input[type="submit"] {
+    display: inline-block;
+    line-height: 20px;
+    padding: 5px 8px 5px;
+    position: relative;
+    outline: none;
+    background-color: $black;
+    color: white;
+    border-radius: 0px;
+    font-family: $font-family;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    &:before {
+        content: '';
+        display: block;
+        height: calc(100% - 2px);
+        border: 1px solid $black;
+        position: absolute;
+        width: calc(100% - 2px);
+        top: 3px;
+        left: 3px;
+        transition: top $anim-duration ease-in-out, left $anim-duration ease-in-out, width $anim-duration ease-in-out;
+    }
+    &:hover,
+    &:focus {
+        &:before {
+            top: 0;
+            left: 0;
+        }
+    }
+}

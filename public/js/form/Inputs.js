@@ -27,11 +27,12 @@ export const Input = (props) => {
 export const SubmitGroup = (props) => {
     return (
         <div className="form-control form-actions col-100">
-            <input 
-                type="submit" 
-                value={props.title} 
+            <button 
+                type="submit"
                 className={`btn ${ typeof props.additionalClasses != 'undefined' ? String(props.additionalClasses) : '' }`} 
-            />
+            >
+            {props.title}
+            </button>
         </div>
     )
 }
