@@ -11,6 +11,7 @@ export const Navigation = (props) => {
             ) : (
                 <Fragment>
                     <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
+                    <li><NavLink activeClassName="active" to="/quotes">Quotes</NavLink></li>
                     <li><NavLink activeClassName="active" to="/login">Login</NavLink></li>
                     <li><NavLink activeClassName="active" to="/register">Register</NavLink></li>
                 </Fragment>
