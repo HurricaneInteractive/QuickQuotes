@@ -3,3 +3,4 @@ venv/
 dist/
 package-lock.json
 __pycache__/
+migrations/
